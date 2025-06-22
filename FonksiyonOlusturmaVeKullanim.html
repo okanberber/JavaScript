@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>Fonksiyon Oluşturma Ve Kullanım</title>
+</head>
+
+<body>
+    <button type="button" onclick="yazdir()">Yazdır</button>
+    <button type="button" onclick="topla(45,15)">Topla</button>
+    <button type="button" onclick="islem(5,3)">Çarp</button>
+    <script>
+        //Temelde javascript'te fonksiyon işlemleri c# ile %90 benzerlik taşır
+        function yazdir()
+        {
+            console.log("Selam");
+        }
+        //parametre alan fonksiyon
+        function topla(p1,p2)
+        {
+            sonuc = p1+p2;
+            console.log("Toplam = " + sonuc);
+        }
+        //Değer döndüren fonksiyon
+        //Genellikle kütüphane oluşturma işlemlerinde tercih Ederiz
+        function carp(p1,p2)
+        {
+            sonuc = p1*p2;
+            return sonuc;
+        }
+        function islem(a1,a2)
+        {
+            gelen = carp(a1,a2);
+            console.log("İşlem Sonucu = " + gelen);
+        }
+    </script>
+</body>
+</html>

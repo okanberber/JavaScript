@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>Döngüler</title>
+</head>
+
+<body>
+    <p id="p_sonuc"></p>
+    <p id="j_sonuc"></p>
+    <p id="k_sonuc"></p>
+    <p id="p_insan"></p>
+    <script>
+        metin="";
+        for(i=0; i<10; i++)
+    {
+        metin+="selam <br>";
+    }
+    let j = 5;
+    for(let j = 0; j<10; j++)
+    {
+
+    }
+    var k = 5;
+    for(var k = 0; k<10; k++)
+    {
+
+    }
+    document.getElementById("p_sonuc").innerHTML = metin;
+    document.getElementById("j_sonuc").innerHTML = "j'nin değeri kaç = " + j;
+    document.getElementById("k_sonuc").innerHTML = "k'nin değeri kaç = " + k;
+    insan = {isim:"Murtaza", soyisim:"Şuayipoğlu", yas:45,dogumyeri:"BEM - 302"};
+    satir = "<div style='width:200px;height:100px;border:1px solid silver'>";
+    for(x in insan)
+    {
+        satir += "<b style='color:red'>"+ x +" = "+ "</b>" + insan[x] + "<br>";
+    }
+    satir += "</div>"
+     document.getElementById("p_insan").innerHTML = satir;
+    </script>
+</body>
+</html>
