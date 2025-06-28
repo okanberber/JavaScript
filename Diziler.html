@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>Diziler</title>
+</head>
+
+<body>
+    <p id="p_sonuc"></p>
+    <p id="p_hakkinda"></p>
+    <p id="p_liste"></p>
+    <div>
+        <h2>Eklemeli Bişiler Yapalım</h2>
+        <hr>
+        <input type="text" id="tb_isim">
+        <br>
+        <button type="button" onclick="basaEkle()">Başa Ekle</button>
+        <button type="button" onclick="sonaEkle()">Sona Ekle</button>
+        <button type="button" onclick="sonelemaniSil()">Son Elemanı Sil</button>
+        <button type="button" onclick="ilkelemaniSil()">İlk elemanı Sil</button>
+        <ul id="ul_dizi"></ul>
+    </div>
+    <script>
+        Ogrenciler = ["Volkan","Doğa","Furkan","Berk","Burak","Deniz",65,SelamVer,"Semih","Okan","Nasuh","Mevlüt"];
+        Ogrenciler[0]="Dilara";
+        Ogrenciler[1]="Onur";
+        Ogrenciler[10]="Volkan";
+        Ogrenciler[15]="Doğa";
+        
+        document.getElementById("p_sonuc").innerHTML=Ogrenciler;
+        document.getElementById("p_hakkinda").innerHTML += "Dizi Uzunluğu = " + Ogrenciler.length + "</br>";
+        document.getElementById("p_hakkinda").innerHTML += "3. İndex = " + Ogrenciler[3] + "</br>";
+        //Ogrenciler.length=3;
+        //Ogrenciler.length=10;
+        liste = document.getElementById("p_liste");
+        liste.innerHTML="<ul>";
+        for(i=0; i<Ogrenciler.length;i++)
+        {
+            liste.innerHTML+="<li>"+Ogrenciler[i]+"</li>"
+        }
+
+        function SelamVer()
+        {
+            console.log("Selam Naber");
+        }
+    </script>
+    <script>
+        //dizi = [];
+        //dizi = new Array(10);
+        dizi = new Array();
+
+        function sonaEkle()
+        {
+            eleman = document.getElementById("tb_isim").value;
+            dizi.push(eleman);//başa ekle
+            yazdir();
+        }
+        function basaEkle()
+        {
+            eleman = document.getElementById("tb_isim").value;
+            dizi.unshift(eleman);//sona ekle
+            yazdir();
+        }
+        function sonelemaniSil()
+        {
+            dizi.pop();
+             yazdir();
+        }
+        function ilkelemaniSil()
+        {
+            dizi.shift();
+             yazdir();
+        }
+        function yazdir()
+        {
+             document.getElementById("ul_dizi").innerHTML="";
+             //document.getElementById("ul_dizi").innerHTML=dizi.join("-");//virgül yerine koy
+             for(i=0; i<dizi.length;i++)
+            {
+                document.getElementById("ul_dizi").innerHTML+="<li>"+dizi[i]+"</li>"
+            }
+        }
+    </script>
+</body>
+</html>
