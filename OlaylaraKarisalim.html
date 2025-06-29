@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>Değişkenler Ve Operatörler</title>
+</head>
+
+<body onmousemove="hareket(event)">
+    <p id="p_sonuc"></p>
+    <p id="p_koordinat"></p>
+    <h2>Mouse Olayları</h2>
+    <button type="button" onclick="clickIslemi()">On Click</button>
+    <button type="button" onmouseover="overIslemi()" onmouseleave="leaveIslemi()">On Mouse Over / Leave</button>
+    <button type="button" onmouseup="upIslemi()" onmousedown="downIslemi()">Mouse Down</button>
+    <div style="height: 200px; width: 200px; border: 1px solid black;" onmouseenter="MouseEnter()" onmouseleave="kutuLeave()" ondblclick="ciftClick()" id="d_kutu"></div>
+    <script>
+        function clickIslemi()
+        {
+            document.getElementById('p_sonuc').innerText = 'Tıklandı';
+        }
+        function overIslemi()
+        {
+            document.getElementById('p_sonuc').innerText = 'On Mouse Over';
+        }
+        function leaveIslemi()
+        {
+            document.getElementById('p_sonuc').innerText = 'On Mouse Leave';
+        }
+        function upIslemi()
+        {
+            document.getElementById('p_sonuc').innerText = 'On Mouse Up';
+        }
+        function downIslemi()
+        {
+            document.getElementById('p_sonuc').innerText = 'On Mouse Down';
+        }
+         function MouseEnter()
+        {
+            document.getElementById('d_kutu').innerHTML = 'lorem ipsum dolor sit amet.</br>lorem ipsum dolor sit amet.</br>lorem ipsum dolor sit amet.</br>lorem ipsum dolor sit amet.</br>lorem ipsum dolor sit amet.</br>lorem ipsum dolor sit amet.</br>';
+        }
+        function kutuLeave()
+        {
+            document.getElementById('d_kutu').innerHTML="";
+        }
+        function ciftClick()
+        {
+            document.getElementById('d_kutu').style="background-color:red;height: 200px; width: 200px; border: 1px solid black;";
+        }
+        function hareket(e)
+        {
+            x = e.clientX;
+            y = e.clientY;
+            document.getElementById('p_sonuc').innerHTML="Mouse Kordinatı = " + x + "," + y;
+        }
+    </script>
+</body>
+</html>
